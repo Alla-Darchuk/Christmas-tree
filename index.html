@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script/constants_for_script.js"></script>
+    <title>Christmas Tree</title>
+</head>
+<body>
+    <aside class="wrapper">
+        <input type="checkbox" id="checkbox" class="wrapper_checkbox">
+        <label for="checkbox" class="wrapper_button">
+            <img src="./angel-100px.png" alt="">
+        </label>
+        <div class="wrapper_menu">
+            <input type="checkbox" id="snow" class="snow_checkbox">
+            <label for="snow" class="wrapper_menu-link">Snow</label>
+            <div class="snow_menu">
+                <button class="snow_menu-button" onclick="snow('snow_1')">Snow 1</button>
+                <button class="snow_menu-button" onclick="snow('snow_body_2')">Snow 2</button>
+                <button class="snow_menu-button" onclick="snow('snow_body_3')">Snow 3</button>
+            </div>
+
+            <!-- <a href="#" class="wrapper_menu-link">Garlands</a> -->
+            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.changedToy')">Create Toys</a>
+            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.candles')">Christmas tree candles</a>
+            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.bolls')">Christmas tree bolls </a>
+        </div> 
+    </aside>
+    <div class="changedToy">
+        <button class="btn p1" ">
+            <img src=" ./svg/palla_Co.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(BALL.STAR)">
+        </button>
+    
+        <button class="btn p2">
+            <img src="./svg/PatternedBauble4b.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(BALL.SNOW)">
+        </button>
+    
+        <button class="btn p3">
+            <img src="./svg/PatternedBauble3.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(BALL.CHESTNUT)">
+        </button>
+    
+        <button class="btn p4">
+            <img src="./svg/PatternedBauble6b.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(BALL.TREE)">
+        </button>
+    
+        <button class="btn p5">
+            <img src="./svg/blue-candle.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(CANDLE.BLUE)">
+        </button>
+    
+        <button class="btn p6">
+            <img src="./svg/Candle_1.svg" class="imgBtn" draggable="true" onmousedown="changeCreatedElement(CANDLE.RED)">
+        </button>
+    
+        <button class="btn p7">
+            <img src="./svg/jilagan-Burning-Candle.svg" class="imgBtn" draggable="true"
+                onmousedown="changeCreatedElement(CANDLE.YELLOW)">
+        </button>
+    
+        <button class="btn p8 dropParent">
+        </button>
+    </div>
+    <div class="content">
+        <img class='tree' src="./svg/johnny_automatic_Christmas_tree.svg" alt="">
+    </div>
+    <div class="snow_body_1">
+        <div class="snow_1">
+            <div></div>
+        </div>
+    </div>
+    <div class="snow_body_2" aria-hidden="true">
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+    </div>
+    <div class="snow_body_3">
+        <div class="snow_3 layer1 a"></div>
+        <div class="snow_3 layer1"></div>
+        <div class="snow_3 layer2 a"></div>
+        <div class="snow_3 layer2"></div>
+        <div class="snow_3 layer3 a"></div>
+        <div class="snow_3 layer3"></div>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
+</html>
