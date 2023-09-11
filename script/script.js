@@ -1,11 +1,22 @@
 let firstToys = document.getElementsByClassName('imgBtn');
 let parent = document.querySelector('.content');
 let package = document.getElementsByClassName('dropParent');
+let buttonMenu = document.querySelector('.wrapper_button');
+let menu = document.querySelector('.wrapper_menu');
 let numberToy = 0;
 let tree, coordinat_x, coordinat_y, createdToy, newToy, removeToy, toysInLocalStorage;
 // window.localStorage.clear()
 
+const toggleMenu = () => {
+  menu.classList.toggle('active');
+}
 
+buttonMenu.addEventListener('click', e => {
+    e.stopPropagation();
+    toggleMenu();
+});
+
+document.addEventListener('click', closeMenuListeners);
 
 if (window.localStorage.getItem('position') !== null) {
     toysInLocalStorage = JSON.parse(window.localStorage.getItem('position'));
@@ -30,7 +41,19 @@ package[0].addEventListener('drop', dropListener);
 
 
 
-// for listeners 
+// for listeners
+function closeMenuListeners(event) {
+    let target = event.target;
+    let its_menu = target == menu || menu.contains(target);
+    let its_buttonMenu = target == buttonMenu;
+    let menu_is_active = menu.classList.contains('active');
+  
+    if (!its_menu && !its_buttonMenu && menu_is_active) {
+        toggleMenu();
+    }
+}
+
+
 function dragendForFirstToys(event) {
     let coordinates = getCoodinates(event, this);
     let object = generateToy(createdToy, coordinates);
@@ -104,11 +127,12 @@ function renderToy(object) {
     div.classList.add('elem');
     div.draggable = true;
     div.id = object.id;
-    div.classList.add(object.typeClass);
+    div.classList.add(object.type);
     div.style.width = object.size;
     div.style.top = object.top + '%';
     div.style.left = object.left + '%';
     img.src = object.src;
+    
     return div;
 };
 
@@ -133,6 +157,7 @@ function snow(snowClassName) {
 
 function toggleElementOnTree(className) {
     let elements = document.querySelectorAll(className);
+    console.log(elements);
     for (let i = 0; i < elements.length; i++){
         if (elements[i].style.display === 'none') {
             elements[i].style.display = 'block';

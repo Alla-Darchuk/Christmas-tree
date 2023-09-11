@@ -10,56 +10,60 @@
 </head>
 <body>
     <aside class="wrapper">
-        <input type="checkbox" id="checkbox" class="wrapper_checkbox">
-        <label for="checkbox" class="wrapper_button">
+        <div  class="wrapper_button">
             <img src="./angel-100px.png" alt="">
-        </label>
+        </div>
         <div class="wrapper_menu">
             <input type="checkbox" id="snow" class="snow_checkbox">
             <label for="snow" class="wrapper_menu-link">Snow</label>
             <div class="snow_menu">
-                <button class="snow_menu-button" onclick="snow('snow_1')">Snow 1</button>
-                <button class="snow_menu-button" onclick="snow('snow_body_2')">Snow 2</button>
-                <button class="snow_menu-button" onclick="snow('snow_body_3')">Snow 3</button>
+                <div class="menu_snow_item">
+                    <label for="snow_1" class="snow_menu-button" onclick="snow('snow_1')">Snow 1</label>
+                    <input type="checkbox" id="snow_1">
+                </div>
+                <div class="menu_snow_item">
+                    <label for="snow_2"class="snow_menu-button" onclick="snow('snow_body_2')">Snow 2</label>
+                    <input type="checkbox" id="snow_2">
+                </div>
+                <div class="menu_snow_item">
+                    <label  for="snow_3"class="snow_menu-button" onclick="snow('snow_body_3')">Snow 3</label>
+                    <input type="checkbox" id="snow_3">
+                </div>  
             </div>
-
-            <!-- <a href="#" class="wrapper_menu-link">Garlands</a> -->
-            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.changedToy')">Create Toys</a>
-            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.candles')">Christmas tree candles</a>
-            <a href="#" class="wrapper_menu-link" onclick="toggleElementOnTree('.bolls')">Christmas tree bolls </a>
+            <a href="#" class="wrapper_menu-link" onclick="snow('changedToy')">Decorate the tree</a>
         </div> 
     </aside>
     <div class="changedToy">
-        <button class="btn p1" ">
+        <button class="btn" ">
             <img src=" ./svg/palla_Co.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(BALL.STAR)">
         </button>
     
-        <button class="btn p2">
+        <button class="btn">
             <img src="./svg/PatternedBauble4b.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(BALL.SNOW)">
         </button>
     
-        <button class="btn p3">
+        <button class="btn">
             <img src="./svg/PatternedBauble3.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(BALL.CHESTNUT)">
         </button>
     
-        <button class="btn p4">
+        <button class="btn">
             <img src="./svg/PatternedBauble6b.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(BALL.TREE)">
         </button>
     
-        <button class="btn p5">
+        <button class="btn">
             <img src="./svg/blue-candle.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(CANDLE.BLUE)">
         </button>
     
-        <button class="btn p6">
+        <button class="btn">
             <img src="./svg/Candle_1.svg" class="imgBtn" draggable="true" onmousedown="changeCreatedElement(CANDLE.RED)">
         </button>
     
-        <button class="btn p7">
+        <button class="btn">
             <img src="./svg/jilagan-Burning-Candle.svg" class="imgBtn" draggable="true"
                 onmousedown="changeCreatedElement(CANDLE.YELLOW)">
         </button>
